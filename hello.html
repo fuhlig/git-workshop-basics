@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Git Basics - Workshop</title>
+    </head>
+    <body>
+        <style>:root
+        {
+            --spacing:                0.75rem;
+            --badge-width:            350px;
+            --badge-logo-size:        30px;
+            --badge-background:       #EE1C25;
+            --badge-accent:           #FFF;
+            --badge-text-color:       #FFF;
+            --badge-name-text-color:  #000;
+            --badge-rotation:         -7deg;
+            --badge-border-size:      0.6rem;
+            --badge-border-radius:    15px;
+            --badge-cut-off-size:     20px;
+            --badge-footer-text-size: 0.8rem;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #DDD;
+        }
+
+        .container {
+            min-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .badge {
+            position: relative;
+            flex-basis: var(--badge-width);
+            margin: var(--spacing);
+            border: var(--badge-border-size) solid var(--badge-accent);
+            border-radius: var(--badge-border-radius);
+            background-color: var(--badge-background);
+            color: var(--badge-text-color);
+            overflow: hidden;
+            text-align: center;
+            transform: rotate(var(--badge-rotation));
+            backface-visibility: hidden; /* fix rendering issue on border due to rotation */
+        }
+
+        /* cut-out corner */
+        .badge::after {
+            content: "";
+            position: absolute;
+            top: calc(var(--badge-cut-off-size) / 4 * -1);
+            right: calc(var(--badge-cut-off-size) / 4 * -1);
+            width: var(--badge-cut-off-size);
+            height: var(--badge-cut-off-size);
+            border-radius: 100%;
+            background-color: var(--badge-accent);
+        }
+
+        .badge__header {
+            padding: var(--spacing);
+            text-align: center;
+        }
+
+        .badge__title {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: var(--spacing);
+        }
+
+        .badge__intro {
+            margin: 0;
+        }
+
+        .badge__name {
+            padding: var(--spacing);
+            font-family: cursive;
+            background-color: var(--badge-accent);
+            color: var(--badge-name-text-color);
+            font-size: 3em;
+        }
+
+        .badge__footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing);
+            font-size: var(--badge-footer-text-size);
+        }
+    </style>
+
+
+    <div class="container">
+        <div class="badge">
+            <header class="badge__header">
+                <h3 class="badge__title">hello</h3>
+                <h4 class="badge__intro">my name is</h4>
+            </header>
+            <!-- ENTER NAME HERE -->
+            <div class="badge__name">NAME</div>
+            <footer class="badge__footer">
+                <div class="badge__outro">
+                    welcome &hearts;
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body></html>
